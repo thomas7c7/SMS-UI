@@ -1,0 +1,27 @@
+<div class="container">     <!-- Creates a container -->
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">  
+
+    <div class="form-group">
+    <label> Full Name </label>
+    <input class="form-control" type="text" id="fullName" formControlName="fullName" placeholder="FullName"/><br><br>
+    </div>
+
+    <div class="form-group">
+    <label> Username </label>
+    <input class="form-control" type="text" id="userName" formControlName="userName" placeholder="Username"/><br><br>  <!-- Needs to match the name in formGroup with formControlName -->
+    </div>
+
+    <div class="form-group">
+    <label>Password</label>
+    <input class="form-control" type = "password" id="password" formControlName="password" placeholder="Password"/>
+    </div>
+    <div class="col-auto">  <!-- Bootstrap -->
+      <span id="passwordHelpInline" class="form-text">
+        Password must be 8-20 characters long.
+      </span>
+    </div><br>
+  
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+    </form>
+  </div>
+  

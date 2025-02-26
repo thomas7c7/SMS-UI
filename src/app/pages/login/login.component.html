@@ -1,0 +1,22 @@
+<!-- Creating ui for login -->
+<div class="container">     <!-- Creates a container, form-control and form- group comes from bootstrap-->
+  <form [formGroup]="loginForm" (ngSubmit)="login()">   <!-- Maps the created loginForm to this HTML, ngSubmit calls the login Function -->
+    
+    <div class="form-group"> 
+    <label>Username</label>
+    <input class="form-control" type="text" id="userName" formControlName="userName" placeholder="Username"/>  <!-- Needs to match the name in formGroup with formControlName -->
+    <div class="text-danger" *ngIf="loginForm.get('userName').errors?.['required'] && loginForm.get('userName')?.touched">
+        Please provide username.
+    </div>
+    </div><br>
+    
+    <label>Password</label>
+    <input class="form-control" aria-describedby="passwordHelpInline" type = "password" id="password" formControlName="password" placeholder="Password"/>
+    <div class="text-danger" *ngIf="loginForm.get('password').errors?.['required'] && loginForm.get('password')?.touched">  <!-- Bootstrap -->
+        Password must be 8-20 characters long.
+    </div>
+
+    <button [disabled]="loginForm.invalid" class="btn btn-primary" type="submit">Login</button>
+    <button class="btn btn-success m-4" routerLink="signup">Sign Up</button> <!-- Clicking signup button takes the user to the signup page as defined in routes -->
+  </form>
+</div>

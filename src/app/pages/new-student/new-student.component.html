@@ -1,0 +1,27 @@
+<p>Student Details!</p>
+<div>
+    <form [formGroup]="newStudentForm" (ngSubmit)="saveStudent()">
+    <label>Full Name</label>
+    <input type="text" id="name" formControlName="name" placeholder="FullName"/><br><br>
+
+    <label>Email</label>
+    <input type="text" id="emailAddress" formControlName="emailAddress" placeholder="Email"/><br><br>
+
+    <label>Gender</label><br>
+    Male<input type="radio" id="gender" value="Male" formControlName="gender"/>
+    Female<input type="radio" id="gender" value="Female" formControlName="gender"/><br><br>
+
+    <label>Phone Number</label>
+    <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Phone Number"/><br><br>
+
+    <label>Major</label>
+    <select id="major" formControlName="major">
+        <option value="">Select Major</option>
+        <option value="High School">High School</option>
+        <option value="Bachelors">Bachelors</option>
+        <option value="Masters">Masters</option>
+        <option value="PHD">PHD</option>
+    </select><br>
+    <button type="submit">Save</button>
+    </form>
+</div>

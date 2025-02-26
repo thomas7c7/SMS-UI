@@ -1,0 +1,35 @@
+<br><button class="btn btn-success" routerLink="/new">New Student</button> <!-- /new is for route within a route -->
+<br><br>
+
+<p>Student List</p>
+<div class="table-responsive m-3">
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Major</th>
+            <th>Actions</th>
+        </tr>
+    </thead> 
+    
+    <tbody>
+        <tr *ngFor="let student of studentList"> <!-- String interpolation to showcase data dynamically -->
+
+            <td>{{student.studentId}} </td> <!-- must match model name  -->
+            <td>{{student.name}} </td>
+            <td>{{student.emailAddress}} </td>
+            <td>{{student.gender}} </td>
+            <td>{{student.phoneNumber}} </td>
+            <td>{{student.major}} </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteStudent(student.studentId)">Delete</button>
+                <button class="btn btn-warning" style="margin-left: 10px;" routerLink="/update/{{student.studentId}}">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
